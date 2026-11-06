@@ -24,11 +24,25 @@ A DSH Web UI plugin that renders every scheduled reminder on a timeline with liv
 
 ## 安装 / Install
 
+### 从 GitHub 安装（推荐）
+
+在 DSH 侧边栏打开「插件」页，点「添加插件」，填入以下任一 spec：
+
+- `github:yuuuian/dsh-reminder-timeline`
+- `https://github.com/yuuuian/dsh-reminder-timeline`
+
+安装完成后刷新一次 Web 页面，侧边栏会出现「提醒」图标（铃铛）。插件版本见
+[Releases](https://github.com/yuuuian/dsh-reminder-timeline/releases)。
+
+### 本地目录安装
+
+先克隆仓库，再在「插件」页添加本地目录，或由 Agent 用 `plugin_manager` 的
+`install_bundle` 安装该目录：
+
 ```powershell
-pnpm dsh plugin install "<仓库目录>"
+git clone https://github.com/yuuuian/dsh-reminder-timeline.git
 ```
 
-或在本会话内由 Agent 用 `plugin_manager` 的 `install_bundle` 安装本目录。
 安装后刷新一次 Web 页面即可看到侧边栏的「提醒」图标。
 
 ## 结构 / Layout
