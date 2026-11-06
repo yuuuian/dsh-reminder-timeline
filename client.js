@@ -1269,34 +1269,48 @@ window.__ModuleLoader__.load({
         white-space: nowrap;
       }
       .drt-check input {
+        box-sizing: border-box;
         appearance: none;
-        width: 34px;
-        height: 21px;
-        margin: 0;
         position: relative;
+        flex: 0 0 auto;
+        width: 36px;
+        height: 20px;
+        padding: 2px;
+        margin: 0;
+        border: 0;
         border-radius: 999px;
-        background: color-mix(in srgb, var(--dsw-alias-label-secondary) 26%, transparent);
+        corner-shape: round;
+        background: var(--dsw-alias-border-l3, var(--dsw-alias-border-l2));
         cursor: pointer;
-        flex-shrink: 0;
-        transition: background 0.18s ease;
       }
       .drt-check input::after {
         content: '';
+        display: block;
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 17px;
-        height: 17px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        background: var(--dsw-alias-label-secondary);
-        transition: transform 0.18s ease, background 0.18s ease;
+        corner-shape: round;
+        background: var(--dsw-alias-switch-thumb, var(--dsw-alias-label-secondary));
+        transition: transform 120ms ease;
       }
-      .drt-check input:checked { background: var(--dsw-alias-label-primary); }
+      .drt-check input:checked {
+        background: var(--dsw-alias-brand-primary);
+      }
       .drt-check input:checked::after {
-        transform: translateX(13px);
-        background: var(--dsw-alias-bg-base);
+        transform: translateX(16px);
+        background: var(--dsw-alias-label-primary-foreground, var(--dsw-alias-bg-base));
       }
-      .drt-check input:focus-visible { outline: 2px solid var(--dsw-alias-brand-primary); outline-offset: 2px; }
+      .drt-check input:disabled {
+        cursor: default;
+        opacity: 0.5;
+      }
+      .drt-check input:focus-visible {
+        outline: var(--dsw-focus-ring-width, 2px) solid var(--dsw-focus-ring-color, var(--dsw-alias-state-business-primary, var(--dsw-alias-brand-primary)));
+        outline-offset: 2px;
+      }
       .drt-muted { margin: 8px 0; font-size: 12px; color: var(--dsw-alias-label-secondary); }
       .drt-notice {
         display: flex;
